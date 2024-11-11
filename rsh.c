@@ -29,14 +29,13 @@ int main() {
     // TODO
     // Add variables as needed
     pid_t pid;
-    char *argv[] = {"echo", "Hello from the spawned process!", NULL};
     int status;
     posix_spawnattr_t attr; 
     char line[256];
     posix_spawnattr_init(&attr);
 
     while (1) {
-
+	
 	fprintf(stderr,"rsh>");
 
 	if (fgets(line,256,stdin)==NULL) continue;
@@ -44,7 +43,8 @@ int main() {
 	if (strcmp(line,"\n")==0) continue;
 
 	line[strlen(line)-1]='\0';
-
+	
+	char *argv[20] = {NULL};
 	// TODO
 	// Add code to spawn processes for the first 9 commands
 	// And add code to execute cd, exit, help commands
