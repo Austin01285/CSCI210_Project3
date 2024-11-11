@@ -95,6 +95,7 @@ int main() {
 			} else if (strcmp(cmd,"exit")==0) {
 				break;
 			} else if (strcmp(cmd,"help")==0) {
+				printf("The allowed commands are:\n");
 				for (int j=0;j<12;j++) {
 					printf("%i: %s\n", j+1, allowed[j]);
 				}
